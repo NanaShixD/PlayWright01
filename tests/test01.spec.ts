@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 
-test.describe('Good path login',() => {
-test('test', async ({ page }) => {
+test.describe('Login path',() => {
+test('Good login path', async ({ page }) => {
   await page.goto('/');
   await page.locator('#login_id').click();
   await page.locator('#login_id').fill('12345678');
