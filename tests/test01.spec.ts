@@ -1,5 +1,6 @@
 import { test, expect } from '@playwright/test';
 
+test.describe('Good path login',() => {
 test('test', async ({ page }) => {
   await page.goto('/');
   await page.locator('#login_id').click();
@@ -10,4 +11,5 @@ test('test', async ({ page }) => {
   await page.locator('#login_password').fill('qweasdzx');
   await page.locator('#login_password').blur();
   await page.getByRole('button', { name: 'zaloguj się' }).click();
+});
 });
