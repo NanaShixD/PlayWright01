@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 
 test.describe('Login path',() => {
-//Credki
+//Credki logowania
 const Login = '12345678'
 const Password = 'qweasdzx'
 
