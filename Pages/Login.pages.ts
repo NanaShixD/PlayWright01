@@ -1,6 +1,7 @@
 import { Page } from "@playwright/test";
 
 export class LoginPage {
+    static loginInput: any;
     constructor(private page: Page) { }
 
     loginInput = this.page.locator('#login_id')
