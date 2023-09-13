@@ -3,8 +3,6 @@ import { loginData } from '../LoginData/logindata.data';
 import { LoginPage } from '../Pages/Login.pages';
 import { Przelewy } from '../Pages/Przelewy.pages';
 
-
-
 test.describe('Login path', () => {
     //Credki logowania
     const Login = loginData.Login;
