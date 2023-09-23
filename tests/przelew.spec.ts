@@ -2,6 +2,7 @@ import { test, expect } from '@playwright/test';
 import { loginData } from '../LoginData/logindata.data';
 import { LoginPage } from '../Pages/Login.pages';
 import { Przelewy } from '../Pages/Przelewy.pages';
+import { loginaction } from '../Actions/loginaction.spec';
 
 test.describe('Login path', () => {
     //Credki logowania
@@ -9,16 +10,7 @@ test.describe('Login path', () => {
     const Password = loginData.Password;
 
     test.beforeEach(async ({ page }, testInfo) => {
-        await page.goto('/');
-        const loginPage = new LoginPage(page);
-        await loginPage.loginInput.click();
-        await loginPage.loginInput.fill(Login);
-        await loginPage.loginInput.blur();
-        await loginPage.nextButton.click();
-        await loginPage.passwordInput.click();
-        await loginPage.passwordInput.fill(Password);
-        await loginPage.passwordInput.blur();
-        await loginPage.loginButton.click();
+        await loginaction(page, Login, Password); // Wywołaj funkcję logowania
     });
 
 
