@@ -10,7 +10,7 @@ test.describe('Login path', () => {
     const Password = loginData.Password;
 
     test.beforeEach(async ({ page }, testInfo) => {
-        await loginaction(page, Login, Password); // Wywołaj funkcję logowania
+        await loginaction(page, Login, Password); 
     });
 
 
