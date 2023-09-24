@@ -12,11 +12,17 @@ test.describe('Login path', () => {
     test.beforeEach(async ({ page }, testInfo) => {
         await loginaction(page, Login, Password); 
     });
-    
+
     test('Good login path', async ({ page }) => {
         const przelewMenu = new Przelewy(page);
         await przelewMenu.przelewButton.click();
         await przelewMenu.wykonajprzelewButton.click()
         await expect(przelewMenu.status).toHaveText("Przelew na 'Konto na życie' wykonany");
     });
+
+
+
+
+
+    
 });

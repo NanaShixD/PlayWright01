@@ -21,6 +21,25 @@ test.describe('Login path', () => {
     await loginPage.passwordInput.fill(Password);
     await loginPage.passwordInput.blur();
     await loginPage.loginButton.click();
+    await expect(page).toHaveURL("https://demobank.jaktestowac.pl/pulpit.html")
+  });
+
+  test('Good login path + Loqout', async ({ page }) => {
+    await page.goto('/');
+    const Login = loginData.Login;
+    const Password = loginData.Password;
+
+    const loginPage = new LoginPage(page);
+    await loginPage.loginInput.click();
+    await loginPage.loginInput.fill(Login);
+    await loginPage.loginInput.blur();
+    await loginPage.nextButton.click();
+    await loginPage.passwordInput.click();
+    await loginPage.passwordInput.fill(Password);
+    await loginPage.passwordInput.blur();
+    await loginPage.loginButton.click();
+    await loginPage.loqoutButton.click();
+    await expect(page).toHaveURL("https://demobank.jaktestowac.pl/logowanie_etap_2.html")
   });
 });
 

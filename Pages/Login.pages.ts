@@ -8,5 +8,6 @@ export class LoginPage {
     passwordInput = this.page.locator('#login_password')
     nextButton = this.page.getByRole('button', { name: 'dalej' })
     loginButton = this.page.getByRole('button', { name: 'zaloguj się' })
+    loqoutButton = this.page.getByRole('link', { name: 'Wyloguj' })
 
 }
